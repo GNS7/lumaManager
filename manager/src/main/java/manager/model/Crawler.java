@@ -66,8 +66,8 @@ public class Crawler{
 
     private static String buildUrl(String query){
         try{
-            return "http://store.steampowered.com/api/appdetails?appids=" + URLEncoder.encode(query.trim(),
-                    StandardCharsets.UTF_8.toString());
+            return "https://store.steampowered.com/api/storesearch?term=" + URLEncoder.encode(query.trim(),
+                    StandardCharsets.UTF_8.toString()) + "&cc=us&l=en-us";
         }catch(UnsupportedEncodingException ex){
             throw new RuntimeException(ex);
         }
